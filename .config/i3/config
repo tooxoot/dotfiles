@@ -166,7 +166,6 @@
   bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
   # lockscreen
-  # bindsym $mod+l exec i3lock -u -i /home/sven/Downloads/paper.png
   bindsym $mod+l exec bash ~/.i3/lockscreen.sh
   # lock and suspend
   # bindsym $mod+Shift+l exec i3lock -u, exec systemctl suspend
@@ -261,8 +260,3 @@
     separator_symbol "||"
     strip_workspace_numbers yes
   }
-
-
-# DISPLAZSHIT
-#  xrandr --output HDMI1 --mode 1024x768 --right-of eDP1
-#
