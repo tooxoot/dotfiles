@@ -1,0 +1,33 @@
+general {
+        output_format = "i3bar"
+        colors = true
+        interval = 5
+}
+
+order += "volume master"
+order += "battery 0"
+order += "tztime berlin"
+
+battery 0 {
+        format = "%status %percentage"
+        format_down = "No battery"
+        #unicode: f244
+        status_chr = ""
+        status_bat = ""
+        status_full = ""
+        path = "/sys/class/power_supply/BAT1/uevent"
+        low_threshold = 10
+}
+
+tztime berlin {
+        format = "%Y-%m-%d %H:%M:%S"
+        timezone = "Europe/Berlin"
+}
+
+volume master {
+    format = " %volume"
+    format_muted = ""
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
+}
