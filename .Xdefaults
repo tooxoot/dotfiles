@@ -1,20 +1,12 @@
 #URxvt.saveLines: 10000
-URxvt.scrollBar: false
 #URxvt.foreground: gray
 #URxvt.background: black
 URxvt.secondaryScroll: true
-#URxvt.font: xft:Terminess Powerline:size=6
-#URxvt.font: xft:Bitstream Vera Sans Mono:pixelsize=12
+URxvt.scrollBar: false
 
-#urxvt*font: xft:Terminus:size=10,xft:UbuntuMono\ for\ Powerline:size=10
-#URxvt.urlLauncher: google-chrome-stable
-#URxvt.letterSpace: -1
-
-URxvt*font: xft:Terminus:size=10,xft:RobotoMono\ for\ Powerline:size=10
-URxvt.letterSpace: -4
-#urxvt*font: xft:Terminus:size=10,xft:AnonymousPro\ for\ Powerline:size=10
-#URxvt.letterSpace: -3
+#URxvt*font: xft:RobotoMono\ for\ Powerline:size=12
+URxvt*font: xft:Literation\ Mono\ Powerline\ Nerd\ Font:size=12
 
 
-#urxvt*background: black
-#urxvt*foreground: grey
+#URxvt.letterSpace: 1
+#URxvt.lineSpace: 30
