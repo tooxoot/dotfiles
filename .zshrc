@@ -7,10 +7,15 @@ export ZSH=$HOME/.oh-my-zsh
 #Set Nano as Editor
 export EDITOR=nano
 
+BRONZE=(status:black:white dir:blue:black git:green:black cmdtime:magenta:black)
+export BRONZE_SHELL=zsh # bash, zsh, or fish
+eval "$(bronze init)"
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="agnoster"
+
 ZSH_THEME="custom/custom"
 xrdb -merge ~/.Xresources
 
@@ -89,4 +94,5 @@ source $ZSH/oh-my-zsh.sh
 alias lsa="ls -a"
 alias svnmenu="ruby ~\/scripts\/ruby\/svnMenu.rb"
 alias config='/usr/bin/git --git-dir=$HOME/.custom_config/ --work-tree=$HOME'
+alias regex_mv="ruby ~/scripts/ruby/regex_mv.rb"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
