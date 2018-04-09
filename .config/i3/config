@@ -16,23 +16,27 @@
 
   # Font for window titles. Will also be used by the bar unless a different font
   # is used in the bar {} block below.
-  #font pango:monospace 8
-  font pango: monospace , fontawesome 8
+  font pango: monospace 8 fontawesome 9
+
+
+  # font pango: fontawesome monospace 20
+
+
 
   # Use Mouse+$mod to drag floating windows to their wanted position
   floating_modifier $mod
 
   # workspace name definition
-  set $w1 1:
-  set $w2 2:
-  set $w3 3:
-  set $w4 4:
-  set $w5 5:
-  set $w6 6:
-  set $w7 7:
-  set $w8 8:
-  set $w9 9:
-  set $w0 0:
+  set $w1 1:1  
+  set $w2 2:2  
+  set $w3 3:3  
+  set $w4 4:4  
+  set $w5 5:5  
+  set $w6 6:6  
+  set $w7 7:7  
+  set $w8 8:8  
+  set $w9 9:9  
+  set $w0 0:0  
 
   #Testlines
   #bindsym $mod+b exec i3-sensible-terminal -name scratchpad -e /bin/zsh
@@ -152,8 +156,23 @@
   bindsym $mod+Shift+0 move container to workspace $w0
 
   # move workspace to other output
-  bindsym $mod+alt+left move workspace to output left
-  bindsym $mod+alt+right move workspace to output right
+  set $move_workspace Move workspace to Oputput: Left || Right || Up || Down
+  bindsym $mod+m mode "$move_workspace"
+
+  mode "$move_workspace" {
+    bindsym Left  move workspace to output left
+    bindsym Right move workspace to output right
+    bindsym Up    move workspace to output up
+    bindsym Down  move workspace to output down
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+  }
+  bindsym $mod+Control+left move workspace to output left
+  bindsym $mod+Control+right move workspace to output right
+  bindsym $mod+Control+down move workspace to output down
+  bindsym $mod+Control+up move workspace to output up
 
   # reload the configuration file
   bindsym $mod+Shift+c reload
@@ -183,6 +202,8 @@
   # scratchpad
   bindsym $mod+Shift+F1 move scratchpad
   bindsym $mod+F1 scratchpad show
+  bindsym $mod+Shift+Escape move scratchpad
+  bindsym $mod+Escape scratchpad show
 
   # modbindings
   bindsym $mod+r mode "resize"
@@ -250,6 +271,15 @@
       bindsym Escape mode "default"
     }
 
+# colors
+    #class                 border  backgr. text    indicator child_border
+    client.focused          #585858 #1D1D1D #D5D5D5 #585858   #585858
+    client.focused_inactive #454545 #1D1D1D #D5D5D5 #454545   #454545
+    client.unfocused        #333333 #222222 #888888 #333333   #222222
+    client.urgent           #333333 #222222 #888888 #333333   #222222
+    client.placeholder      #000000 #0c0c0c #E80C0C #000000   #0c0c0c
+    client.background       #000000
+
 # bar
 
   # Start i3bar to display a workspace bar (plus the system information i3status
@@ -259,4 +289,17 @@
     status_command i3status
     separator_symbol "||"
     strip_workspace_numbers yes
+
+    colors {
+      #class             border   bg      text
+      focused_workspace  #585858  #1D1D1D #D5D5D5
+      active_workspace   #1D1D1D  #656565 #1D1D1D
+      inactive_workspace #333333  #1D1D1D #656565
+      urgent_workspace   #9A1717  #900000 #C27373
+      binding_mode       #9A1717  #900000 #D5D5D5
+      background  #000000
+      statusline  #D5D5D5
+      separator   #666666
+    }
+
   }
